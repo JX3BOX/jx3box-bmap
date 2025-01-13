@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-bmap",
-    "version": "0.1.13",
+    "version": "0.1.14",
     "description": "JX3BOX Baizhan Map",
     "scripts": {
         "dev": "env DEV_SERVER=true vue-cli-service serve",

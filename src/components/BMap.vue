@@ -205,12 +205,20 @@ export default {
                         buffID: 24848,
                     });
                     const effects = list.map((item) => {
+                        const effect = baizhanEffects.find((effect) => effect.id === item.nID) || {};
+                        let reward = effect.reward;
+                        if (effect.rewardRegexp) {
+                            const matches = item.szDescription.match(effect.rewardRegexp);
+                            if (matches?.[1]) {
+                                reward = Number(matches[1]);
+                            }
+                        }
                         return {
                             ...item,
-                            reward: baizhanEffects.find((effect) => effect.id === item.nID)?.reward || 0,
-                            tags: baizhanEffects.find((effect) => effect.id === item.nID)?.tags || [],
-                            buffID: baizhanEffects.find((effect) => effect.id === item.nID)?.buffID || 24848,
-                            buffLevel: baizhanEffects.find((effect) => effect.id === item.nID)?.buffLevel || 1,
+                            reward: reward || 0,
+                            tags: effect?.tags || [],
+                            buffID: effect?.buffID || 24848,
+                            buffLevel: effect?.buffLevel || 1,
                         };
                     });
                     this.setState({
