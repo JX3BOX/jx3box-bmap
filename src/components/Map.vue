@@ -267,7 +267,7 @@ export default {
 
                 // 加载本地图片
                 const image = new Image();
-                image.src = require("@/assets/img/logo.svg");
+                image.src = require("../assets/img/logo.svg");
                 image.crossOrigin = "";
                 image.onload = () => {
                     // 创建临时canvas用于处理图片
