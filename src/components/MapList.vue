@@ -39,7 +39,8 @@
 <script>
 import { cloneDeep } from "lodash";
 import { iconLink } from "@jx3box/jx3box-common/js/utils";
-import { __Root } from "@jx3box/jx3box-common/data/jx3box.json";
+import jx3box from "@jx3box/jx3box-common/data/jx3box.json";
+const { __Root } = jx3box;
 export default {
     name: "MapList",
     props: {

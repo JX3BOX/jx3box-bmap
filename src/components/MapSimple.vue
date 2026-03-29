@@ -5,24 +5,24 @@
                 <el-tooltip v-for="(floor, cIndex) in item" :key="cIndex" placement="top" popper-class="u-bmap-tooltip">
                     <template #content>
                         <div class="u-tip">
-                        <div class="u-top">
-                            <div class="u-avatar">
-                                <img :src="floor.bossAvatar" :alt="floor.bossName" />
-                            </div>
-                            <div class="u-right">
-                                <div class="u-name">{{ floor.bossName }}</div>
-                                <div class="u-desc">
-                                    <div v-if="floor.effect.tags.length" class="u-tag">
-                                        {{ floor.effect.tags.join("/") }}
-                                        + {{ floor.effect.reward }}
+                            <div class="u-top">
+                                <div class="u-avatar">
+                                    <img :src="floor.bossAvatar" :alt="floor.bossName" />
+                                </div>
+                                <div class="u-right">
+                                    <div class="u-name">{{ floor.bossName }}</div>
+                                    <div class="u-desc">
+                                        <div v-if="floor.effect.tags.length" class="u-tag">
+                                            {{ floor.effect.tags.join("/") }}
+                                            + {{ floor.effect.reward }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div v-if="floor.nEffectID" class="u-bottom">
-                            <div class="u-name">{{ floor.effect.szName }}</div>
-                            <div class="u-desc">{{ floor.effect.szDescription }}</div>
-                        </div>
+                            <div v-if="floor.nEffectID" class="u-bottom">
+                                <div class="u-name">{{ floor.effect.szName }}</div>
+                                <div class="u-desc">{{ floor.effect.szDescription }}</div>
+                            </div>
                         </div>
                     </template>
                     <div class="u-column" :class="{ 'is-effect': floor.nEffectID, 'is-elite': !((cIndex + 1) % 10) }">
@@ -49,7 +49,8 @@
 
 <script>
 import { iconLink } from "@jx3box/jx3box-common/js/utils";
-import { __Root } from "@jx3box/jx3box-common/data/jx3box.json";
+import jx3box from "@jx3box/jx3box-common/data/jx3box.json";
+const { __Root } = jx3box;
 import { cloneDeep } from "lodash";
 import { arr1to2 } from "../utils/index.js";
 export default {

@@ -63,7 +63,8 @@
 </template>
 
 <script>
-import { __imgPath } from "@jx3box/jx3box-common/data/jx3box.json";
+import jx3box from "@jx3box/jx3box-common/data/jx3box.json";
+const { __imgPath } = jx3box;
 import { arr1to2, isPhone, isQQ, isWeChat, getEffectInfo } from "../utils";
 import { cloneDeep } from "lodash";
 import html2canvas from "html2canvas";

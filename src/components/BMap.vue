@@ -23,8 +23,8 @@ import {
     skill_colors,
     effectsFilter,
 } from "../assets/data/baizhan_effects.js";
-import { __imgPath } from "@jx3box/jx3box-common/data/jx3box.json";
-
+import jx3box from "@jx3box/jx3box-common/data/jx3box.json";
+const { __imgPath } = jx3box;
 import MapList from "./MapList.vue";
 import MapSimple from "./MapSimple.vue";
 import MapCompleted from "./Map.vue";
