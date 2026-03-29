@@ -1,13 +1,11 @@
-Vue.config.productionTip = false;
-
 // 第三方UI组件
-import Vue from "vue";
-import ElementUI from "element-ui";
-Vue.use(ElementUI);
-import "@jx3box/jx3box-common/css/element.css";
+import { createApp } from "vue";
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
 import "@jx3box/jx3box-common/css/normalize.css";
 
 import App from "./App.vue";
-new Vue({
-    render: (h) => h(App),
-}).$mount("#app");
+
+const app = createApp(App);
+app.use(ElementPlus);
+app.mount("#app");

@@ -1,6 +1,9 @@
 <template>
     <div class="m-completed-map" v-loading="loading" ref="container">
-        <el-button class="u-phone-download" icon="el-icon-download" @click="exportToImage">下载</el-button>
+        <el-button class="u-phone-download" @click="exportToImage">
+            <el-icon class="u-download-icon"><Download /></el-icon>
+            下载
+        </el-button>
         <div class="m-boss-list" ref="map">
             <div
                 class="u-step"
@@ -51,8 +54,8 @@
                             </div>
                         </div>
                     </div>
-                    <i class="u-info-icon el-icon-arrow-up"></i>
-                    <i class="u-info-icon el-icon-arrow-down"></i>
+                    <el-icon class="u-info-icon is-up"><ArrowUp /></el-icon>
+                    <el-icon class="u-info-icon is-down"><ArrowDown /></el-icon>
                 </div>
             </div>
         </div>
@@ -65,8 +68,14 @@ import { arr1to2, isPhone, isQQ, isWeChat, getEffectInfo } from "../utils";
 import { cloneDeep } from "lodash";
 import html2canvas from "html2canvas";
 import { moment } from "@jx3box/jx3box-common/js/moment";
+import { ArrowDown, ArrowUp, Download } from "@element-plus/icons-vue";
 export default {
     name: "MapCompleted",
+    components: {
+        ArrowDown,
+        ArrowUp,
+        Download,
+    },
     props: ["effectsFilter", "updatedAt"],
     data() {
         return {
@@ -427,11 +436,11 @@ export default {
                 color: @baizhan_active;
                 font-weight: bold;
             }
-            .el-icon-arrow-down {
+            .u-info-icon.is-down {
                 top: -10px;
                 left: -10px;
             }
-            .el-icon-arrow-up {
+            .u-info-icon.is-up {
                 bottom: -10px;
                 right: -10px;
             }

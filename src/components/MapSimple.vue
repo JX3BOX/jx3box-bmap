@@ -3,7 +3,8 @@
         <div class="u-list" :class="list.length % 2 ? 'is-odd' : 'is-even'" v-if="maps.length">
             <div class="u-row" v-for="(item, index) in list" :key="index">
                 <el-tooltip v-for="(floor, cIndex) in item" :key="cIndex" placement="top" popper-class="u-bmap-tooltip">
-                    <div class="u-tip" slot="content">
+                    <template #content>
+                        <div class="u-tip">
                         <div class="u-top">
                             <div class="u-avatar">
                                 <img :src="floor.bossAvatar" :alt="floor.bossName" />
@@ -22,7 +23,8 @@
                             <div class="u-name">{{ floor.effect.szName }}</div>
                             <div class="u-desc">{{ floor.effect.szDescription }}</div>
                         </div>
-                    </div>
+                        </div>
+                    </template>
                     <div class="u-column" :class="{ 'is-effect': floor.nEffectID, 'is-elite': !((cIndex + 1) % 10) }">
                         <div class="u-img-index" @click="toMap(index * column + cIndex + 1)">
                             <div class="u-img">
@@ -158,9 +160,9 @@ export default {
                 // @mark: 8px;
                 .u-index {
                     position: absolute;
-                    top: @s - @b - @mark / 2;
+                    top: (@s - @b - @mark / 2);
                     left: 50%;
-                    margin-left: -@mark / 2;
+                    margin-left: -(@mark / 2);
                     .size(@mark);
                     .x;
                     z-index: 2;

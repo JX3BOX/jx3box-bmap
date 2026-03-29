@@ -1,4 +1,4 @@
-import { $node, $cms } from "@jx3box/jx3box-common/js/https";
+import { $node, $cms } from "@jx3box/jx3box-common/js/api";
 
 // 获取所有的百战BOSS列表
 export function getBosses() {

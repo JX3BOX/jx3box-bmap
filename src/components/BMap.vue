@@ -10,7 +10,6 @@
             :effectsFilter="effectsFilter"
             :updatedAt="updatedAt"
             v-bind="$attrs"
-            v-on="$listeners"
         ></component>
     </div>
 </template>
@@ -32,6 +31,7 @@ import MapCompleted from "./Map.vue";
 
 export default {
     name: "BMap",
+    inheritAttrs: false,
     components: {
         MapList,
         MapSimple,
