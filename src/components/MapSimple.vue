@@ -161,7 +161,7 @@ export default {
                 // @mark: 8px;
                 .u-index {
                     position: absolute;
-                    top: (@s - @b - @mark / 2);
+                    top: (@s - @b - (@mark / 2));
                     left: 50%;
                     margin-left: -(@mark / 2);
                     .size(@mark);
