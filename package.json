@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-bmap",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "JX3BOX Baizhan Map",
     "scripts": {
         "dev": "env DEV_SERVER=true vue-cli-service serve",
@@ -74,5 +74,9 @@
     },
     "overrides": {
         "vue-loader": "17.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JX3BOX/jx3box-bmap.git"
     }
 }
